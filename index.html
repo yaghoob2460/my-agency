@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sourena Studio — Premium Web Design in Under 1 Week</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brand: { 400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed' },
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #a78bfa, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .glow { box-shadow: 0 0 60px rgba(139,92,246,0.15); }
+    .card-hover { transition: transform 0.3s, box-shadow 0.3s; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+    .hero-glow { background: radial-gradient(ellipse at 50% 0%, rgba(139,92,246,0.15) 0%, transparent 60%); }
+    input:focus, textarea:focus { outline: none; box-shadow: 0 0 0 2px #8b5cf6; }
+    .nav-blur { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  </style>
+</head>
+<body class="bg-gray-950 text-gray-100 antialiased">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur bg-gray-950/70 border-b border-white/5 transition-all">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="text-xl font-bold tracking-tight">Sourena<span class="gradient-text">Studio</span></a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+        <a href="#services" class="hover:text-white transition">Services</a>
+        <a href="#how-it-works" class="hover:text-white transition">Process</a>
+        <a href="#portfolio" class="hover:text-white transition">Portfolio</a>
+        <a href="#pricing" class="hover:text-white transition">Pricing</a>
+        <a href="#testimonials" class="hover:text-white transition">Reviews</a>
+        <a href="#contact" class="hover:text-white transition">Contact</a>
+      </div>
+      <a href="#contact" class="hidden md:inline-flex px-5 py-2.5 rounded-full bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold transition">Start a Project</a>
+      <button id="menuBtn" class="md:hidden text-gray-300" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden px-6 pb-4 space-y-3 text-sm text-gray-400">
+      <a href="#services" class="block hover:text-white">Services</a>
+      <a href="#how-it-works" class="block hover:text-white">Process</a>
+      <a href="#portfolio" class="block hover:text-white">Portfolio</a>
+      <a href="#pricing" class="block hover:text-white">Pricing</a>
+      <a href="#testimonials" class="block hover:text-white">Reviews</a>
+      <a href="#contact" class="block hover:text-white">Contact</a>
+      <a href="#contact" class="block px-4 py-2 bg-brand-600 rounded-full text-white text-center font-semibold">Start a Project</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden hero-glow pt-20">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-brand-600/10 rounded-full blur-[120px]"></div>
+    </div>
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-600/30 bg-brand-600/10 text-brand-400 text-xs font-medium mb-8">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse"></span>
+        Available for new projects
+      </div>
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-[1.05] tracking-tight mb-6">
+        Websites Built in<br />
+        <span class="gradient-text">Under 1 Week</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Sourena Studio delivers premium, conversion-focused websites for ambitious businesses — designed, developed, and launched in less than 7 days.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#contact" class="px-8 py-4 rounded-full bg-brand-600 hover:bg-brand-500 text-white font-semibold text-base transition shadow-lg shadow-brand-600/25">
+          Get Your Website →
+        </a>
+        <a href="#portfolio" class="px-8 py-4 rounded-full border border-white/10 hover:border-white/25 text-gray-300 font-medium text-base transition">
+          View Our Work
+        </a>
+      </div>
+      <div class="mt-16 flex items-center justify-center gap-8 text-sm text-gray-500">
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          7-Day Delivery
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          Custom Design
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+          100% Satisfaction
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-brand-400 font-semibold text-sm uppercase tracking-widest mb-3">What We Do</p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Services</h2>
+        <p class="text-gray-400 max-w-xl mx-auto">Everything you need to launch a stunning online presence — fast.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card-hover p-8 rounded-2xl bg-gray-900/60 border border-white/5">
+          <div class="w-12 h-12 rounded-xl bg-brand-600/15 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Web Design</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Pixel-perfect, modern designs tailored to your brand identity and optimized for conversions.</p>
+        </div>
+        <div class="card-hover p-8 rounded-2xl bg-gray-900/60 border border-white/5">
+          <div class="w-12 h-12 rounded-xl bg-brand-600/15 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Web Development</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Clean, performant code using modern technologies. Fast load times and smooth interactions.</p>
+        </div>
+        <div class="card-hover p-8 rounded-2xl bg-gray-900/60 border border-white/5">
+          <div class="w-12 h-12 rounded-xl bg-brand-600/15 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Responsive Design</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Every site we build looks flawless on desktop, tablet, and mobile — guaranteed.</p>
+        </div>
+        <div class="card-hover p-8 rounded-2xl bg-gray-900/60 border border-white/5">
+          <div class="w-12 h-12 rounded-xl bg-brand-600/15 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2">SEO Optimization</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Built-in SEO best practices so your site ranks higher from day one.</p>
+        </div>
+        <div class="card-hover p-8 rounded-2xl bg-gray-900/60 border border-white/5">
+          <div class="w-12 h-12 rounded-xl bg-brand-600/15 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Brand Strategy</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">We help define your visual identity and messaging to resonate with your target audience.</p>
+        </div>
+        <div class="card-hover p-8 rounded-2xl bg-gray-900/60 border border-white/5">
+          <div class="w-12 h-12 rounded-xl bg-brand-600/15 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Ongoing Support</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Post-launch support and maintenance to keep your site running at peak performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="py-24 relative bg-gray-900/30">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-brand-400 font-semibold text-sm uppercase tracking-widest mb-3">Our Process</p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">How It Works</h2>
+        <p class="text-gray-400 max-w-xl mx-auto">A streamlined 4-step process to get your website live in under 7 days.</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="text-center relative">
+          <div class="w-14 h-14 rounded-full bg-brand-600 text-white font-bold text-lg flex items-center justify-center mx-auto mb-5 relative z-10">1</div>
+          <div class="hidden md:block absolute top-7 left-[60%] right-[-40%] h-px bg-gradient-to-r from-brand-600/50 to-transparent"></div>
+          <h3 class="text-lg font-bold mb-2">Discovery Call</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">We learn about your business, goals, and design preferences in a quick 30-min call.</p>
+        </div>
+        <div class="text-center relative">
+          <div class="w-14 h-14 rounded-full bg-brand-600 text-white font-bold text-lg flex items-center justify-center mx-auto mb-5 relative z-10">2</div>
+          <div class="hidden md:block absolute top-7 left-[60%] right-[-40%] h-px bg-gradient-to-r from-brand-600/50 to-transparent"></div>
+          <h3 class="text-lg font-bold mb-2">Design & Build</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Our team crafts your custom design and develops it with clean, modern code.</p>
+        </div>
+        <div class="text-center relative">
+          <div class="w-14 h-14 rounded-full bg-brand-600 text-white font-bold text-lg flex items-center justify-center mx-auto mb-5 relative z-10">3</div>
+          <div class="hidden md:block absolute top-7 left-[60%] right-[-40%] h-px bg-gradient-to-r from-brand-600/50 to-transparent"></div>
+          <h3 class="text-lg font-bold mb-2">Review & Revise</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">You review the site and request changes. We refine until it's perfect.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 rounded-full bg-brand-600 text-white font-bold text-lg flex items-center justify-center mx-auto mb-5 relative z-10">4</div>
+          <h3 class="text-lg font-bold mb-2">Launch Day</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">We deploy your site, set up hosting, and hand over the keys. You're live!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-brand-400 font-semibold text-sm uppercase tracking-widest mb-3">Our Work</p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Portfolio</h2>
+        <p class="text-gray-400 max-w-xl mx-auto">Recent projects we've delivered for our clients.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="group card-hover rounded-2xl overflow-hidden bg-gray-900/60 border border-white/5">
+          <div class="aspect-video bg-gradient-to-br from-violet-600/30 to-indigo-600/30 flex items-center justify-center">
+            <span class="text-4xl font-black text-white/10">01</span>
+          </div>
+          <div class="p-6">
+            <span class="text-xs text-brand-400 font-medium">E-Commerce</span>
+            <h3 class="text-lg font-bold mt-1">Luxe Candles</h3>
+            <p class="text-gray-400 text-sm mt-1">Premium candle brand e-commerce with custom product pages and checkout flow.</p>
+          </div>
+        </div>
+        <div class="group card-hover rounded-2xl overflow-hidden bg-gray-900/60 border border-white/5">
+          <div class="aspect-video bg-gradient-to-br from-emerald-600/30 to-teal-600/30 flex items-center justify-center">
+            <span class="text-4xl font-black text-white/10">02</span>
+          </div>
+          <div class="p-6">
+            <span class="text-xs text-brand-400 font-medium">SaaS</span>
+            <h3 class="text-lg font-bold mt-1">DataFlow</h3>
+            <p class="text-gray-400 text-sm mt-1">Analytics platform landing page with feature showcase and pricing integration.</p>
+          </div>
+        </div>
+        <div class="group card-hover rounded-2xl overflow-hidden bg-gray-900/60 border border-white/5">
+          <div class="aspect-video bg-gradient-to-br from-rose-600/30 to-pink-600/30 flex items-center justify-center">
+            <span class="text-4xl font-black text-white/10">03</span>
+          </div>
+          <div class="p-6">
+            <span class="text-xs text-brand-400 font-medium">Restaurant</span>
+            <h3 class="text-lg font-bold mt-1">Sakura Kitchen</h3>
+            <p class="text-gray-400 text-sm mt-1">Japanese restaurant site with online reservation system and menu gallery.</p>
+          </div>
+        </div>
+        <div class="group card-hover rounded-2xl overflow-hidden bg-gray-900/60 border border-white/5">
+          <div class="aspect-video bg-gradient-to-br from-amber-600/30 to-orange-600/30 flex items-center justify-center">
+            <span class="text-4xl font-black text-white/10">04</span>
+          </div>
+          <div class="p-6">
+            <span class="text-xs text-brand-400 font-medium">Corporate</span>
+            <h3 class="text-lg font-bold mt-1">Apex Holdings</h3>
+            <p class="text-gray-400 text-sm mt-1">Corporate identity site with investor relations and team bios.</p>
+          </div>
+        </div>
+        <div class="group card-hover rounded-2xl overflow-hidden bg-gray-900/60 border border-white/5">
+          <div class="aspect-video bg-gradient-to-br from-sky-600/30 to-blue-600/30 flex items-center justify-center">
+            <span class="text-4xl font-black text-white/10">05</span>
+          </div>
+          <div class="p-6">
+            <span class="text-xs text-brand-400 font-medium">Healthcare</span>
+            <h3 class="text-lg font-bold mt-1">MediCare Clinic</h3>
+            <p class="text-gray-400 text-sm mt-1">Healthcare provider site with appointment booking and doctor profiles.</p>
+          </div>
+        </div>
+        <div class="group card-hover rounded-2xl overflow-hidden bg-gray-900/60 border border-white/5">
+          <div class="aspect-video bg-gradient-to-br from-fuchsia-600/30 to-purple-600/30 flex items-center justify-center">
+            <span class="text-4xl font-black text-white/10">06</span>
+          </div>
+          <div class="p-6">
+            <span class="text-xs text-brand-400 font-medium">Creative Agency</span>
+            <h3 class="text-lg font-bold mt-1">Neon Studio</h3>
+            <p class="text-gray-400 text-sm mt-1">Creative agency portfolio with animated showcase and client testimonials.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-24 relative bg-gray-900/30">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-brand-400 font-semibold text-sm uppercase tracking-widest mb-3">Pricing</p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Transparent Packages</h2>
+        <p class="text-gray-400 max-w-xl mx-auto">No hidden fees. Pick the plan that fits your business.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Starter -->
+        <div class="card-hover p-8 rounded-2xl bg-gray-900/60 border border-white/5 flex flex-col">
+          <h3 class="text-lg font-bold mb-1">Starter</h3>
+          <p class="text-gray-400 text-sm mb-6">Perfect for small businesses.</p>
+          <div class="mb-6">
+            <span class="text-4xl font-black">$499</span>
+            <span class="text-gray-500 text-sm ml-1">/ project</span>
+          </div>
+          <ul class="space-y-3 text-sm text-gray-400 mb-8 flex-1">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>Up to 5 pages</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>Responsive design</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>Contact form</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>SEO basics</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>5-day delivery</li>
+          </ul>
+          <a href="#contact" class="block text-center py-3 rounded-full border border-white/10 hover:border-brand-500 text-gray-300 font-semibold transition">Get Started</a>
+        </div>
+        <!-- Pro -->
+        <div class="card-hover p-8 rounded-2xl bg-gray-900 border-2 border-brand-600/50 flex flex-col relative glow">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-brand-600 text-white text-xs font-bold">MOST POPULAR</div>
+          <h3 class="text-lg font-bold mb-1">Professional</h3>
+          <p class="text-gray-400 text-sm mb-6">For growing businesses.</p>
+          <div class="mb-6">
+            <span class="text-4xl font-black">$999</span>
+            <span class="text-gray-500 text-sm ml-1">/ project</span>
+          </div>
+          <ul class="space-y-3 text-sm text-gray-400 mb-8 flex-1">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>Up to 10 pages</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>Custom animations</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>Advanced SEO</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>Analytics setup</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>5-day delivery</li>
+          </ul>
+          <a href="#contact" class="block text-center py-3 rounded-full bg-brand-600 hover:bg-brand-500 text-white font-semibold transition">Get Started</a>
+        </div>
+        <!-- Enterprise -->
+        <div class="card-hover p-8 rounded-2xl bg-gray-900/60 border border-white/5 flex flex-col">
+          <h3 class="text-lg font-bold mb-1">Enterprise</h3>
+          <p class="text-gray-400 text-sm mb-6">Full-scale digital solutions.</p>
+          <div class="mb-6">
+            <span class="text-4xl font-black">$1,999</span>
+            <span class="text-gray-500 text-sm ml-1">/ project</span>
+          </div>
+          <ul class="space-y-3 text-sm text-gray-400 mb-8 flex-1">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>Unlimited pages</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>E-commerce integration</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>CMS integration</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>Priority 7-day delivery</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>30-day support</li>
+          </ul>
+          <a href="#contact" class="block text-center py-3 rounded-full border border-white/10 hover:border-brand-500 text-gray-300 font-semibold transition">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-brand-400 font-semibold text-sm uppercase tracking-widest mb-3">Testimonials</p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">What Clients Say</h2>
+        <p class="text-gray-400 max-w-xl mx-auto">Real feedback from businesses we've helped launch online.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card-hover p-8 rounded-2xl bg-gray-900/60 border border-white/5">
+          <div class="flex items-center gap-1 mb-4">
+            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-gray-300 text-sm leading-relaxed mb-6">"Sourena Studio delivered our site in 4 days. The design exceeded our expectations and our conversions jumped 40% within the first month."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-indigo-500 flex items-center justify-center text-white font-bold text-sm">A</div>
+            <div>
+              <p class="text-white font-semibold text-sm">Ahmad K.</p>
+              <p class="text-gray-500 text-xs">CEO, Luxe Candles</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-hover p-8 rounded-2xl bg-gray-900/60 border border-white/5">
+          <div class="flex items-center gap-1 mb-4">
+            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-gray-300 text-sm leading-relaxed mb-6">"The team was incredibly responsive and professional. They understood our vision immediately and brought it to life in record time."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white font-bold text-sm">S</div>
+            <div>
+              <p class="text-white font-semibold text-sm">Sarah M.</p>
+              <p class="text-gray-500 text-xs">Founder, DataFlow</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-hover p-8 rounded-2xl bg-gray-900/60 border border-white/5">
+          <div class="flex items-center gap-1 mb-4">
+            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-gray-300 text-sm leading-relaxed mb-6">"Best investment for our restaurant. Online reservations went up 60% and customers love the new look. Highly recommend!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-rose-500 to-pink-500 flex items-center justify-center text-white font-bold text-sm">R</div>
+            <div>
+              <p class="text-white font-semibold text-sm">Ryo T.</p>
+              <p class="text-gray-500 text-xs">Owner, Sakura Kitchen</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-24 relative bg-gray-900/30">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-brand-400 font-semibold text-sm uppercase tracking-widest mb-3">Get In Touch</p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Let's Build Something Great</h2>
+        <p class="text-gray-400 max-w-xl mx-auto">Ready to launch your website? Fill out the form and we'll get back to you within 24 hours.</p>
+      </div>
+      <div class="grid md:grid-cols-5 gap-12 max-w-5xl mx-auto">
+        <div class="md:col-span-2 space-y-8">
+          <div>
+            <h4 class="text-white font-semibold mb-1">Email</h4>
+            <a href="mailto:hello@sourenastudio.com" class="text-gray-400 text-sm hover:text-brand-400 transition">hello@sourenastudio.com</a>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-1">Phone</h4>
+            <a href="tel:+1234567890" class="text-gray-400 text-sm hover:text-brand-400 transition">+1 (234) 567-890</a>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-1">Based In</h4>
+            <p class="text-gray-400 text-sm">Remote-first, serving clients worldwide</p>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-3">Follow Us</h4>
+            <div class="flex gap-3">
+              <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-brand-500 transition">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-brand-500 transition">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-brand-500 transition">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <form class="md:col-span-3 space-y-5" onsubmit="handleSubmit(event)">
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-1.5">Name</label>
+              <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl bg-gray-800/80 border border-white/10 text-white text-sm placeholder-gray-500 focus:border-brand-500 transition" placeholder="Your name" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-1.5">Email</label>
+              <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl bg-gray-800/80 border border-white/10 text-white text-sm placeholder-gray-500 focus:border-brand-500 transition" placeholder="you@company.com" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-1.5">Budget</label>
+            <select name="budget" class="w-full px-4 py-3 rounded-xl bg-gray-800/80 border border-white/10 text-white text-sm focus:border-brand-500 transition">
+              <option value="" disabled selected>Select your budget</option>
+              <option>Under $500</option>
+              <option>$500 – $999</option>
+              <option>$1,000 – $1,999</option>
+              <option>$2,000+</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-1.5">Project Details</label>
+            <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-xl bg-gray-800/80 border border-white/10 text-white text-sm placeholder-gray-500 focus:border-brand-500 transition resize-none" placeholder="Tell us about your project..."></textarea>
+          </div>
+          <button type="submit" class="w-full py-3.5 rounded-full bg-brand-600 hover:bg-brand-500 text-white font-semibold transition shadow-lg shadow-brand-600/25">
+            Send Message →
+          </button>
+          <p id="formSuccess" class="hidden text-center text-emerald-400 text-sm font-medium">Thanks! We'll be in touch soon.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8 mb-12">
+        <div class="md:col-span-2">
+          <a href="#" class="text-xl font-bold tracking-tight">Sourena<span class="gradient-text">Studio</span></a>
+          <p class="text-gray-400 text-sm mt-3 max-w-sm leading-relaxed">Premium web design agency building high-converting websites for businesses in under 1 week.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-4">Quick Links</h4>
+          <ul class="space-y-2.5 text-sm text-gray-400">
+            <li><a href="#services" class="hover:text-white transition">Services</a></li>
+            <li><a href="#portfolio" class="hover:text-white transition">Portfolio</a></li>
+            <li><a href="#pricing" class="hover:text-white transition">Pricing</a></li>
+            <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-4">Legal</h4>
+          <ul class="space-y-2.5 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-gray-500 text-xs">&copy; 2026 Sourena Studio. All rights reserved.</p>
+        <p class="text-gray-500 text-xs">Crafted with precision.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('formSuccess').classList.remove('hidden');
+      e.target.reset();
+      setTimeout(() => document.getElementById('formSuccess').classList.add('hidden'), 4000);
+    }
+
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.classList.add('border-b', 'border-white/10');
+      } else {
+        nav.classList.remove('border-b', 'border-white/10');
+      }
+    });
+  </script>
+
+</body>
+</html>
